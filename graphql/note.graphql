@@ -1,0 +1,14 @@
+extend type Query {
+    notes: [Note!]! @paginate
+    note(id: ID @eq): Note @find
+}
+
+type Note {
+    id: ID
+    title: String
+    content: String
+    user_id: ID
+    author: User
+}
+
+
