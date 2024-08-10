@@ -1,0 +1,12 @@
+type Query {
+    users: [User!]! @paginate
+    user(id: ID @eq): User @find
+}
+
+type User {
+    id: ID
+    name: String
+    email: String
+    email_verified_at: String
+    avatar: String
+}
