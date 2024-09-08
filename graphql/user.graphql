@@ -3,6 +3,7 @@ extend type Query {
     user(id: ID @eq): User @find
     users(name: String @where(operator: "like")): [User!]! @paginate
     userNameID(id: ID @eq, name: String @eq): User @find
+    userState(id: ID!): String @field(resolver: "UserStatus@resolve")
 }
 
 type Mutation {
